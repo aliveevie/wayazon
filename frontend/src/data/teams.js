@@ -7,6 +7,7 @@ import nuraImage from '../images/teams/nura.png';
 import usmanAdoImage from '../images/teams/usmanado.png';
 import safiyyanuImage from '../images/teams/safiyyanu.png';
 import abdul from '../images/teams/abdul.png';
+import aliyuImage from '../images/teams/aliyu.jpeg'
 
 const data = [
   {
@@ -57,7 +58,15 @@ const data = [
     description: `
       Abdul Rahman Tijjani, a dynamic Building Technologist graduated from Jigawa State Polytechnic, Dutse, and a business prodigy driven by a fervent passion for entrepreneurship. Bringing a unique blend of technical expertise and business acumen, I am poised to excel in business endeavors, leveraging my skills to contribute to innovative and successful ventures.
     `
-  }
+  },
+  {
+    name: 'Aliyu Umar',
+    title: 'Finance and Budgetary Manager',
+    image: aliyuImage,
+    description: `
+      Aliyu Umar, an Islamic scholar who pursued studies in Islamic Studies at Sule Lamido University, Kafin Hausa. Possessing a deep understanding of Islamic teachings, I am dedicated to promoting knowledge and fostering a better understanding of Islamic principles. Eager to contribute positively to the community through my expertise and commitment to my customers.
+    `
+  },
 ];
 
 export default data;
