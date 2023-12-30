@@ -1,0 +1,49 @@
+/* header.css */
+
+/* General styling for the header container */
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(to right, green, blue, yellow);
+    padding: 10px;
+  }
+  
+  /* Styling for the logo */
+  
+  
+  /* Styling for the navigation bar */
+  .navBar {
+    display: flex;
+    gap: 30px; /* Adjust the gap between navigation links as needed */
+    margin-right: -50px;
+  }
+  
+  /* Styling for navigation links */
+  .navBar a {
+    text-decoration: none;
+    color: white; /* Text color for navigation links */
+    font-weight: bold; /* Adjust font weight as needed */
+    transition: color 0.3s ease; /* Add transition effect for smooth color change */
+  }
+  
+  /* Change link color on hover */
+  .navBar a:hover {
+    color: lightgray; /* Adjust hover color as needed */
+  }
+
+  #hamburger{
+    display: none;
+}
+
+  @media screen and (max-width:800px) {
+    #desktop-menu{
+        display: none;
+      }
+
+    #hamburger{
+        display: block;
+    }
+    
+  }
+  

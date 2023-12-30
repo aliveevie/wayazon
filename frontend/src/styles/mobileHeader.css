@@ -1,0 +1,36 @@
+/* header.css */
+
+.mobile-header {
+    display: flex;
+    height: 100%;
+    display: none;
+}
+
+.mobile-sideBar {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%; /* 1/3 of the screen */
+    background-color: #333; /* Sidebar background color, adjust as needed */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+.mobile-sideBar a {
+    text-decoration: none;
+    color: white; /* Text color for navigation links, adjust as needed */
+    font-size: 18px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Adjust margin between links as needed */
+    transition: color 0.3s ease; /* Add transition effect for smooth color change */
+}
+
+
+.mobile-sideBar a:hover {
+    color: lightgray; 
+}
+
+@media screen and (max-width:800px) {
+    .mobile-header{
+        display: block;
+    }
+}
+
