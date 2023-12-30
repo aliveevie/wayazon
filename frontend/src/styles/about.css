@@ -1,5 +1,9 @@
 /* about.css */
 
+body{
+  background-image: url(../images/background.jpg);
+}
+
 .about-us {
     max-width: 800px;
     margin: 20px auto;
@@ -51,10 +55,16 @@
     margin-top: 40px;
   }
 
-  .our-team  h3{
-        font-size: larger;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  .our-team  h4{
+    font-size: 2.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 50px;
+  }
 
+  .our-team h5{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
   }
   
   .team-members {
@@ -75,6 +85,12 @@
     width: 150px;
     height: 150px;
     margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+  }
+  
+  .member-image:hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
+    cursor: pointer;
   }
   
   .member-image img {
@@ -83,8 +99,9 @@
     object-fit: cover;
   }
   
-  .member-info {
-    margin-top: 10px;
+ 
+ 
+  .member-info h3 {
+    margin-bottom: -45px; /* Adjust the margin between name and title */
   }
-  
   

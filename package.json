@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "server": "nodemon src/server.js",
-      "start": "cd frontend && npm run start",
-      "build": "cd frontend && npm run build"
+    "server": "nodemon src/server.js",
+    "start": "cd frontend && npm run start",
+    "build": "cd frontend && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aos": "^2.3.4",
     "express": "^4.18.2"
   }
 }

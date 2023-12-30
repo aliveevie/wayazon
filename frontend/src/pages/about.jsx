@@ -5,9 +5,9 @@ import dahiru from '../images/teams/dahiru.png'
 export function About(){
 
     return (
-        <div className="about-us" >
-            <h2>Wayazone</h2>
-            <p>Wayazone: Jigawa State's E-Commerce
+        <div className="about-us"  >
+            <h2 data-aos="fade-up" >Wayazone</h2>
+            <p data-aos="fade-right" >Wayazone: Jigawa State's E-Commerce
 
             With its headquarters located in Jigawa State, Wayazone is a trailblazing e-commerce firm that specializes in the easy purchase and sale of phones and accessories. Our endeavor, which is centered on giving tech aficionados a convenient platform, seeks to revolutionize the local market by presenting a wide selection of high-quality products.
 
@@ -18,16 +18,16 @@ export function About(){
             <div className="our-team">
        
         <div className="team-members">
-        <h3>Meet Our Team</h3>
+        <h4>Meet Our Team</h4>
           {data.map((member) => (
             <div key={member.name} className="team-member">
               <div className="member-image">
-                <img src={member.image} alt={member.name} />
+                <img src={member.image} alt={member.name}  data-aos="zoom-out" />
               </div>
               <div className="member-info">
-                <h3>{member.name}</h3>
-                <p>{member.title}</p>
-                <p>{member.description}</p>
+                <h3 data-aos="zoom-in" >{member.name}</h3>
+                <h5  data-aos="fade-right" >{member.title}</h5>
+                <p  data-aos="fade-left" >{member.description}</p>
               </div>
             </div>
           ))}

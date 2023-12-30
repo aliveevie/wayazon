@@ -7,7 +7,7 @@ import nuraImage from '../images/teams/nura.png';
 import usmanAdoImage from '../images/teams/usmanado.png';
 import safiyyanuImage from '../images/teams/safiyyanu.png';
 import abdul from '../images/teams/abdul.png';
-import aliyuImage from '../images/teams/aliyu.jpeg'
+import aliyuImage from '../images/teams/aliyu.jpeg';
 
 const data = [
   {
@@ -45,7 +45,7 @@ const data = [
   },
   {
     name: 'Safiyanu Ubale',
-    title: 'CEO',
+    title: 'General Manager',
     image: safiyyanuImage,
     description: `
       Safiyanu Ubale, an Economics graduate from Federal University Dutse, Jigawa State, showcasing a commitment to business excellence. Known for diligence and a strong work ethic, I am poised to apply my knowledge and skills in contributing meaningfully to professional and business endeavors toward serving our customers with the utmost sense of concern.
