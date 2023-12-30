@@ -1,4 +1,4 @@
-export default data = [
+const data = [
     {
       name: 'Shamsuddeen MUHAMMAD',
       title: 'Secretary',
@@ -49,4 +49,6 @@ export default data = [
         `
       }
   ];
+
+  export default data;
   
