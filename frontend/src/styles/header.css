@@ -36,6 +36,34 @@
     display: none;
 }
 
+/* header.css */
+
+/* ... Your existing styles */
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navBar:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #f8f8f8;
+}
+
+
   @media screen and (max-width:800px) {
     #desktop-menu{
         display: none;
