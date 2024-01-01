@@ -1,7 +1,11 @@
+import Slider from "../components/slider"
+import SliderData from "../data/sliderImages"
+
+
 export function Home(){
     return (
-        <div>
-            <h1>This is the Home page</h1>
-        </div>
+        <>
+            <Slider  slides={SliderData} />
+        </>
     )
 }
