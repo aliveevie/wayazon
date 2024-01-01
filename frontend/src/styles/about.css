@@ -1,46 +1,84 @@
-/* CatComponent.css */
+/* about.css */
 
-.categories {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.phone-images {
+.about-us h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.about-us p {
+  text-align: justify;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* Improved hover effect for a subtle interaction */
+.about-us:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* about.css */
+
+/* ... Your existing styles */
+
+.our-team {
+  margin-top: 40px;
+}
+
+.team-members {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 20px;
 }
 
-.product-card {
-  width: 30%;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px; /* Set a fixed height for consistent dimensions */
-  object-fit: cover; /* Ensure the image covers the specified dimensions */
-}
-
-.product-info {
+.team-member {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+.member-image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-image img:hover{
+  transform: scale(1.1);
   cursor: pointer;
-  font-size: 16px;
 }
 
-button:hover {
-  background-color: #45a049;
+
+
+.member-info {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .about-us {
+    padding: 20px;
+  }
+
+  .about-us h2 {
+    font-size: 2em;
+  }
 }

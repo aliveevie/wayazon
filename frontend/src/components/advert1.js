@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 export function AdvertOne() {
   return (
-    <div className="advert">
+    <>
+        <div className="advert">
       <h1 className="advert-title">
         Waya<span className="zone">Zone</span>
       </h1>
@@ -16,5 +17,11 @@ export function AdvertOne() {
         Learn More
       </Link>
     </div>
+    <div className='advert2' >
+      <p>Start Exploring Wayazone</p>
+      <p className='button' >Start Shopping Now</p>
+    </div>
+
+    </>
   );
 }

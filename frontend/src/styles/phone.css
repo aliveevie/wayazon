@@ -2,13 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
+
+  
   
   .phone-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
+    text-align: center;
+  }
+
+  .phone-images h3, h2, h1{
+    text-align: center;
   }
   
   .product-card {
@@ -52,6 +60,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
+    text-align: center;
+  }
+
+  .watch-images h2, h3{
+      text-align: center;
   }
   
   .watch-images .product-card {
