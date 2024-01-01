@@ -1,24 +1,44 @@
 {
   "files": {
-    "main.css": "/static/css/main.f51413b6.css",
-    "main.js": "/static/js/main.f3b0aaea.js",
-    "static/js/787.3478b399.chunk.js": "/static/js/787.3478b399.chunk.js",
-    "static/media/background.jpg": "/static/media/background.c85f876e501484b3b5e9.jpg",
+    "main.css": "/static/css/main.08c25c07.css",
+    "main.js": "/static/js/main.5f4b0fd3.js",
+    "static/js/787.2edc6747.chunk.js": "/static/js/787.2edc6747.chunk.js",
+    "static/media/slider5.jpg": "/static/media/slider5.e609b53b660c81ab060d.jpg",
+    "static/media/slider4.jpg": "/static/media/slider4.495c9f5af20f4bd54f27.jpg",
+    "static/media/phone1.jpg": "/static/media/phone1.2530a91c7253718824ea.jpg",
+    "static/media/slider7.jpg": "/static/media/slider7.902c9cf491f6de501644.jpg",
+    "static/media/slider2.jpg": "/static/media/slider2.99251d7f376203c988aa.jpg",
+    "static/media/phone2.jpg": "/static/media/phone2.6a8e4ca1492b9f1d8603.jpg",
+    "static/media/slider8.jpg": "/static/media/slider8.e2de2aca96b640106159.jpg",
+    "static/media/slider3.jpg": "/static/media/slider3.b688e7a7212300b3df26.jpg",
+    "static/media/slider9.jpg": "/static/media/slider9.0add74c923a0fb0e16f0.jpg",
     "static/media/safiyyanu.png": "/static/media/safiyyanu.d4c3961b242339646339.png",
+    "static/media/phone5.jpg": "/static/media/phone5.ac36fbe2896549766d9b.jpg",
     "static/media/usmanado.png": "/static/media/usmanado.48440f9469180ddd6452.png",
     "static/media/nura.png": "/static/media/nura.9ce7cfcf9ad6e3b792cc.png",
+    "static/media/watch3.jpeg": "/static/media/watch3.867317578ebc595f20ec.jpeg",
+    "static/media/slider6.jpg": "/static/media/slider6.29264aaa20d903200f47.jpg",
+    "static/media/watch9.jpeg": "/static/media/watch9.dda3e7aacfe5629fdbc7.jpeg",
     "static/media/abdul.png": "/static/media/abdul.4452b5cc6d08d5f57763.png",
+    "static/media/watch6.jpeg": "/static/media/watch6.d391658e901ad2cdd341.jpeg",
+    "static/media/watch1.jpeg": "/static/media/watch1.ada6fd997e759b71681b.jpeg",
+    "static/media/watch4.jpeg": "/static/media/watch4.bc11c29e0f4502bb9359.jpeg",
+    "static/media/watch5.jpeg": "/static/media/watch5.480db0d994774a6fd215.jpeg",
     "static/media/shamsi.png": "/static/media/shamsi.392b38cc1038dccd76c0.png",
+    "static/media/slider1.jpg": "/static/media/slider1.8f36942b50d4ed1dddd3.jpg",
     "static/media/dahiru.png": "/static/media/dahiru.7274189f82e7ed234d58.png",
+    "static/media/watch8.jpeg": "/static/media/watch8.3a7a0cc0c3c9383514de.jpeg",
+    "static/media/watch7.jpeg": "/static/media/watch7.12cae80e97af59a1b63b.jpeg",
     "static/media/logo.png": "/static/media/logo.5c2624653fa8e9dfd788.png",
+    "static/media/watch2.jpeg": "/static/media/watch2.c0ee821608f75476daf9.jpeg",
     "static/media/aliyu.jpeg": "/static/media/aliyu.227d6d57df304022b407.jpeg",
     "index.html": "/index.html",
-    "main.f51413b6.css.map": "/static/css/main.f51413b6.css.map",
-    "main.f3b0aaea.js.map": "/static/js/main.f3b0aaea.js.map",
-    "787.3478b399.chunk.js.map": "/static/js/787.3478b399.chunk.js.map"
+    "main.08c25c07.css.map": "/static/css/main.08c25c07.css.map",
+    "main.5f4b0fd3.js.map": "/static/js/main.5f4b0fd3.js.map",
+    "787.2edc6747.chunk.js.map": "/static/js/787.2edc6747.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f51413b6.css",
-    "static/js/main.f3b0aaea.js"
+    "static/css/main.08c25c07.css",
+    "static/js/main.5f4b0fd3.js"
   ]
 }
