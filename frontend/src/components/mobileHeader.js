@@ -1,12 +1,13 @@
 import '../styles/mobileHeader.css'
+import { Link } from 'react-router-dom'
 export function MobileHeader(){
     return (
         <div className='mobile-header'>
             <nav className="mobile-sideBar">
-                <a href="" >About Us</a>
-                <a href="" >Contact Us</a>
-                <a href="">Categories</a>
-                <a href="">Home</a>
+                <Link to="/about">About Us</Link>
+                <Link to="/contact">Contact Us</Link>
+                <Link to="/categories">Categories</Link>
+                <Link to="/">Home</Link>
             </nav>
         </div>
     )

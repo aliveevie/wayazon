@@ -1,25 +1,34 @@
+import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import { Header } from './components/header';
 import { MobileHeader } from './components/mobileHeader';
 import { About } from './pages/about';
+import { Contact } from './pages/contact';
+import { Home } from './pages/home';
+import { Categories } from './pages/categories';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-
   const [mobile, setMobile] = useState(false);
 
   const handleMobile = () => {
-        setMobile(!mobile)
-  }
+    setMobile(!mobile);
+  };
 
   return (
-    <>
-    <Header  mobile={mobile} handleMobile={handleMobile} />
-    
-    {mobile && <MobileHeader  />}
-    <About />
-    </>
-   
+    <Router>
+      <>
+        <Header mobile={mobile} handleMobile={handleMobile} />
+        {mobile && <MobileHeader />}
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </>
+    </Router>
   );
 }
 
