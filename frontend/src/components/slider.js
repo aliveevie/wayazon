@@ -25,13 +25,12 @@ const ImageSlider = ({ slides }) => {
 
   return (
     <section className='slider'>
-      <button className='left-arrow' onClick={prevSlide}>
-        <i className="fas fa-arrow-left"></i>
+     <button className='left-arrow' onClick={prevSlide}>
+        &lt;
       </button>
       <button className='right-arrow' onClick={nextSlide}>
-        <i className="fas fa-arrow-right"></i>
+        &gt;
       </button>
-
       {SliderData.map((slide, index) => {
         return (
           <div
