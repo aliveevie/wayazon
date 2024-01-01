@@ -1,7 +1,9 @@
+import { CatComponent } from "../components/categories"
+
 export function Categories(){
     return (
-        <div>
-            <h2>This is the Categories Page</h2>
-        </div>
+        <>
+            <CatComponent />
+        </>
     )
 }

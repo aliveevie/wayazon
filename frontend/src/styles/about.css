@@ -1,107 +1,46 @@
-/* about.css */
+/* CatComponent.css */
 
-body{
-  background-image: url(../images/background.jpg);
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about-us {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: lightblue;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .about-us h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   
-  }
-  
-  .about-us p {
-    line-height: 1.5;
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5rem;
-    text-align: justify;
-  }
-  
-  /* Improved hover effect for a subtle interaction */
-  .about-us:hover {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Styling for a responsive design */
-  @media screen and (max-width: 600px) {
-    .about-us {
-      padding: 20px;
-    }
-  
-    .about-us h2 {
-      font-size: 2em;
-    }
-  }
+.phone-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
 
-  /* about.css */
+.product-card {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-/* ... Your existing styles */
+.product-card img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistent dimensions */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+}
 
-.our-team {
-    margin-top: 40px;
-  }
+.product-info {
+  text-align: center;
+}
 
-  .our-team  h4{
-    font-size: 2.5rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-bottom: 50px;
-  }
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-  .our-team h5{
-    font-size: 2rem;
-    font-weight: bolder;
-    margin-bottom: 20px;
-  }
-  
-  .team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  
-  .team-member {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .member-image {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
-  }
-  
-  .member-image:hover {
-    transform: scale(1.1); /* Scale up by 10% on hover */
-    cursor: pointer;
-  }
-  
-  .member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
- 
- 
-  .member-info h3 {
-    margin-bottom: -45px; /* Adjust the margin between name and title */
-  }
-  
+button:hover {
+  background-color: #45a049;
+}

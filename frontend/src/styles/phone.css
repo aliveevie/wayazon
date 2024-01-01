@@ -1,0 +1,88 @@
+.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .phone-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .product-card {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+  
+  .product-info {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+  /* Add the following styles to your existing CSS */
+
+/* Add the following styles to your existing CSS */
+
+.watch-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .watch-images .product-card {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .watch-images .product-card img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+  
+  .watch-images .product-info {
+    text-align: center;
+  }
+  
+  .watch-images button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .watch-images button:hover {
+    background-color: #45a049;
+  }
+  
