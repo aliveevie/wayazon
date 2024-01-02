@@ -16,7 +16,6 @@ export function Header({ mobile, handleMobile }) {
   };
 
  
-
   return (
     <div className='header' id="header-menu">
       <div className="logo">

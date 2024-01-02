@@ -17,7 +17,7 @@ export function MobileHeader({handleMobile}) {
         <div className="category-link" onClick={handleCategories}>
           Categories
           {showCategories && (
-            <div className="dropdown">
+            <div className="dropdownMb">
               <Link to="/categories/phones" onClick={handleCategories} >Phones</Link>
               <div className="nested-dropdown" onClick={handleCategories} >
                 <Link to="/categories/phones#londonused">London Used</Link>
