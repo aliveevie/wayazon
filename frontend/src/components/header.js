@@ -15,13 +15,7 @@ export function Header({ mobile, handleMobile }) {
     setShowCategories(false);
   };
 
-  /*
-    London Used
-    Smart Android
-    Samsung
-    Iphone
-    Others
-  */
+ 
 
   return (
     <div className='header' id="header-menu">
