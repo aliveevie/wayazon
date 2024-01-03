@@ -25,14 +25,14 @@ function App() {
     <Router>
       <>
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/categories" element={<Categories />} />
+          <Route path="/about" element={<About mobile={mobile} handleMobile={handleMobile}/>} />
+          <Route path="/contact" element={<Contact mobile={mobile} handleMobile={handleMobile}/>} />
+          <Route path="/categories" element={<Categories mobile={mobile} handleMobile={handleMobile} />} />
           <Route path="/" element={<Home mobile={mobile} handleMobile={handleMobile}  />} />
-          <Route path="/categories/phones" element={<Phones />}/>
-          <Route path="/categories/accessories" element={<Accessories />} />
+          <Route path="/categories/phones" element={<Phones mobile={mobile} handleMobile={handleMobile} />}/>
+          <Route path="/categories/accessories" element={<Accessories mobile={mobile} handleMobile={handleMobile} />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
-          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/login" element={<Login  mobile={mobile} handleMobile={handleMobile} />} />
         </Routes>
       </>
     </Router>

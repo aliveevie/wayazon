@@ -11,6 +11,14 @@ import aliyuImage from '../images/teams/aliyu.jpeg';
 
 const data = [
   {
+    name: 'Safiyanu Ubale',
+    title: 'General Manager',
+    image: safiyyanuImage,
+    description: `
+      Safiyanu Ubale, an Economics graduate from Federal University Dutse, Jigawa State, showcasing a commitment to business excellence. Known for diligence and a strong work ethic, I am poised to apply my knowledge and skills in contributing meaningfully to professional and business endeavors toward serving our customers with the utmost sense of concern.
+    `
+  },
+  {
     name: 'Shamsuddeen MUHAMMAD',
     title: 'Secretary',
     image: shamsiImage,
@@ -43,14 +51,7 @@ const data = [
       Usman Ado, a Business Administration and Management Studies graduate from Jigawa State Polytechnic, Dutse. Committed to serving customers promptly within specified timeframes, I prioritize honesty and trustworthiness in all endeavors. Eager to contribute my skills and dedication to achieve mutual success in any business engagements.
     `
   },
-  {
-    name: 'Safiyanu Ubale',
-    title: 'General Manager',
-    image: safiyyanuImage,
-    description: `
-      Safiyanu Ubale, an Economics graduate from Federal University Dutse, Jigawa State, showcasing a commitment to business excellence. Known for diligence and a strong work ethic, I am poised to apply my knowledge and skills in contributing meaningfully to professional and business endeavors toward serving our customers with the utmost sense of concern.
-    `
-  },
+ 
   {
     name: 'Abdul Rahman Tijjani',
     title: 'Marketing Manager',

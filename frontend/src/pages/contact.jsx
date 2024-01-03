@@ -1,9 +1,15 @@
 // Import necessary libraries and components
 import React from 'react';
 import '../styles/contact.css';
+import { Header } from '../components/header';
+import { MobileHeader } from '../components/mobileHeader';
 
-export function Contact() {
+export function Contact({mobile, handleMobile}) {
   return (
+   <>
+        <Header mobile={mobile} handleMobile={handleMobile} />
+        {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
+      
     <div className="contact-page">
       <div className="contact-info">
         <h2>Contact Us</h2>
@@ -15,7 +21,7 @@ export function Contact() {
         </p>
         <div className="social-media">
           <p>Connect with us on social media:</p>
-          {/* Add your social media icons/links here */}
+         
           <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
           <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
@@ -38,5 +44,6 @@ export function Contact() {
         </form>
       </div>
     </div>
+   </>
   );
 }

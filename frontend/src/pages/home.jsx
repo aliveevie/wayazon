@@ -18,7 +18,7 @@ export function Home({mobile, handleMobile}){
             <AdvertOne />
             <Accessories />
             <Phones />
-            <Login />
+           
            
         </>
     )

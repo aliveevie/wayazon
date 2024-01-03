@@ -1,7 +1,13 @@
 import phoneImages from "../data/phoneData";
+import { Header } from "../components/header";
+import { MobileHeader } from "../components/mobileHeader";
 
-export function Phones(){
+export function Phones({mobile, handleMobile}){
    return (
+   <>
+     <Header mobile={mobile} handleMobile={handleMobile} />
+        {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
+      
     <div className="phones" >
         <h2>Explore Different Variety Of Phones</h2>
          <div className="phone-images"  id="phones" >
@@ -21,5 +27,6 @@ export function Phones(){
         ))}
         </div>
     </div>
+   </>
    )
 }

@@ -1,9 +1,15 @@
 import watchImages from "../data/watchData";
+import { Header } from "../components/header";
+import { MobileHeader } from "../components/mobileHeader";
 
-export function Accessories(){
+
+export function Accessories({mobile, handleMobile}){
 
     return (
       <>
+        <Header mobile={mobile} handleMobile={handleMobile} />
+        {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
+      
       <div  id="smart-watch" className="smartWatch" >
       <h3  >Explore Different Smart Watch</h3>
         <div className="watch-images">
