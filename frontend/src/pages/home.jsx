@@ -1,7 +1,8 @@
 import Slider from "../components/slider";
 import SliderData from "../data/sliderImages";
+import { Phones } from "../components/phone";
 import { AdvertOne } from "../components/advert1";
-import { Phones } from "./phones";
+
 import { Accessories } from "./smartWatch";
 import { Login } from "../components/login";
 import { Header } from "../components/header";
