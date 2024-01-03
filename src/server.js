@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3001;
+const db = require('./db');
 
 // Enable CORS middleware
 app.use((req, res, next) => {
@@ -14,11 +15,26 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-app.post('/api/admin/login', (req, res) => {
-    console.log(req.body);
-    // Add your login logic here
-    // Respond with appropriate status or data
-    res.sendStatus(200); // For example, respond with a success status
+app.post('/api/admin/login', async (req, res) => {
+ 
+    const { email, password } = req.body;
+    
+    const result = await db.query('SELECT email, password FROM users WHERE email=$1 AND password=$2', [email, password]);
+
+    if(result.rows.length === 0){
+        return res.json({Failure: 'Error'});
+    }
+
+    const adminEmail = result.rows[0].email;
+    const adminPassword = result.rows[0].password;
+
+    if(email==adminEmail && adminPassword == password){
+        res.json({Failure: 'Success'});
+        return;
+    }else{
+        res.json({Failure: 'Error'})
+    }
+
 });
 
 app.get('/', (req, res) => {

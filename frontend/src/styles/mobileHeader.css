@@ -5,10 +5,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: white; /* Sidebar background color, adjust as needed */
+    background-color: lightblue; /* Sidebar background color, adjust as needed */
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   }
   
   .mobile-sideBar {
@@ -27,34 +28,28 @@
     display: flex;
     flex-direction: column;
     color: white;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 100%;
-    left: -15;
-    width: 100%;
-    z-index: 100;
+   
+   
   }
+  
   
   .nested-dropdown {
     margin-left: 10px;
+    display: block;
   }
   
   .mobile-sideBar a {
-   /* Text color for navigation links, adjust as needed */
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s;
   }
   
-  .mobile-sideBar a:hover {
-    background-color: #555; /* Adjust as needed for hover effect */
-  }
+ 
   
-  /* Additional styles for better visibility */
+  
   .mobile-sideBar a:last-child {
-    border-bottom: none; /* Remove border-bottom for the last link */
+    border-bottom: none;
   }
   
   @media screen and (max-width: 800px) {

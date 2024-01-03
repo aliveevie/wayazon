@@ -10,6 +10,8 @@ import { Categories } from './pages/categories';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Phones } from './pages/phones';
 import { Accessories } from './pages/smartWatch';
+import { Dashboard } from './pages/admin';
+import { Login } from './components/login';
 
 
 function App() {
@@ -22,15 +24,15 @@ function App() {
   return (
     <Router>
       <>
-        <Header mobile={mobile} handleMobile={handleMobile} />
-        {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home mobile={mobile} handleMobile={handleMobile}  />} />
           <Route path="/categories/phones" element={<Phones />}/>
           <Route path="/categories/accessories" element={<Accessories />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/login" element={<Login />} />
         </Routes>
       </>
     </Router>

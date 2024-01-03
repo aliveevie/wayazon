@@ -3,20 +3,22 @@
 /* General styling for the header container */
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, green, blue, yellow);
+    background: lightblue;
     padding: 10px;
   }
   
   /* Styling for the logo */
+  .logo{
+    margin-left: 50px;
+  }
   
-  
-  /* Styling for the navigation bar */
+
   .navBar {
     display: flex;
-    gap: 30px; /* Adjust the gap between navigation links as needed */
-    margin-right: -50px;
+    gap: 30px;
+    margin-right: 50px;
   }
   
   /* Styling for navigation links */

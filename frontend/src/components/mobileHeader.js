@@ -14,24 +14,48 @@ export function MobileHeader({handleMobile}) {
       <nav className="mobile-sideBar">
         <Link to="/about" onClick={handleMobile} >About Us</Link>
         <Link to="/contact" onClick={handleMobile} >Contact Us</Link>
-        <div className="category-link" onClick={handleCategories}>
-          Categories
+        <div className="category-link">
+        <Link onClick={handleCategories}>Categories</Link>
           {showCategories && (
             <div className="dropdownMb">
-              <Link to="/categories/phones" onClick={handleCategories} >Phones</Link>
+              <Link to="/categories/phones"  >Phones</Link>
               <div className="nested-dropdown" onClick={handleCategories} >
+              <ul>
+                <li>
                 <Link to="/categories/phones#londonused">London Used</Link>
+                </li>
+                <li>
                 <Link to="/categories/phones#smartandroid">Smart Android</Link>
+                </li>
+                <li>
                 <Link to="/categories/phones#samsung">Samsung</Link>
+                </li>
+                  <li>
                 <Link to="/categories/phones#iphone">iPhone</Link>
+                  </li>
+                  <li>
                 <Link to="/categories/phones#others">Others</Link>
+                  </li>
+              </ul>
               </div>
+            
               <Link to="/categories/accessories">Accessories</Link>
               <div className="nested-dropdown">
+                <ul>
+                  <li>
                 <Link to="/categories/accessories#mp3andspeakers">MP3 And Speakers</Link>
+                  </li>
+                  <li>
                 <Link to="/categories/accessories#bluetooth">Bluetooth and AirPhones</Link>
+                  </li>
+                  <li>
                 <Link to="/categories/accessories#smartwatch">Smart Watch</Link>
-                <Link to="/categories/accessories#screenguard">Screen Guard and Cover</Link>
+                  </li>
+                  <li>
+                  <Link to="/categories/accessories#screenguard">Screen Guard and Cover</Link>
+
+                  </li>
+                </ul>
               </div>
             </div>
           )}

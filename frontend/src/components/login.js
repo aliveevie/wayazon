@@ -1,7 +1,10 @@
 // Login.jsx
+import { useState } from 'react';
 import logo from '../images/logo.png';
 import '../styles/login.css';
 export function Login() {
+
+    const [error, setError] = useState(null);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -17,10 +20,20 @@ export function Login() {
             },
             body: JSON.stringify({ email, password }),
           });
+
+          const responseData = await response.json();
       
+          console.log(responseData)
           if (response.ok) {
             // Handle successful login, e.g., redirect or set user state
-            console.log('Login successful');
+            if(responseData.Failure==="Error"){
+                setError('Invalid Username or Password!');
+                setTimeout(() => {
+                  setError(null)
+                }, 5000);
+            }else if(responseData.Failure==="Success"){
+                  window.location = '/admin/dashboard'
+            }
           } else {
             // Handle login failure, e.g., show error message
             console.error('Login failed');
@@ -42,6 +55,7 @@ export function Login() {
           <label>Password:</label>
           <input type="password" placeholder="Enter your password" name="password" />
           <button type="submit">Login</button>
+          <p>{error}</p>
         </form>
       </div>
     </div>
