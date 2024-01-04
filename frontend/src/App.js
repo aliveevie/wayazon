@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import './App.css';
-import { Header } from './components/header';
-import { MobileHeader } from './components/mobileHeader';
 import { About } from './pages/about';
 import { Contact } from './pages/contact';
 import { Home } from './pages/home';

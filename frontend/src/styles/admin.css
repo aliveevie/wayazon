@@ -1,0 +1,48 @@
+/* dashboard.css */
+
+.dashboard {
+    background-color: lightblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .welcome-text {
+    font-size: 2em;
+  }
+  
+  .management {
+    display: flex;
+    justify-content: space-around;
+   
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .manage-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: darkblue;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .manage-item:hover {
+    background-color: lightcoral;
+  }
+  
+  .icon {
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width:800px) {
+        .management{
+            display: block;
+        }
+
+        .manage-item{
+            margin-bottom: 10px;
+        }
+  }
+  

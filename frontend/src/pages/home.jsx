@@ -7,6 +7,7 @@ import { Accessories } from "./smartWatch";
 import { Login } from "../components/login";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobileHeader";
+import { SmartWatch } from "../components/smartWatches";
 
 
 export function Home({mobile, handleMobile}){
@@ -17,7 +18,7 @@ export function Home({mobile, handleMobile}){
         {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
             <Slider  slides={SliderData} />
             <AdvertOne />
-            <Accessories />
+            <SmartWatch />
             <Phones />
            
            

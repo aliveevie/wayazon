@@ -1,6 +1,6 @@
 import watchImages from "../data/watchData";
 
-export function Accessories(){
+export function SmartWatch(){
 
     return (
       <>
