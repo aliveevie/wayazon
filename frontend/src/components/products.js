@@ -1,24 +1,46 @@
 // Products component
 
+import { useState } from 'react';
 import React from 'react';
 import '../styles/products.css';
 
 export function Products() {
+
+  const [showAddProduct, setShowAddProduct] = useState(false);
+  const [removeProduct, setRemoveProduct] = useState(false);
+
+  function handleAddProducts(){
+        setShowAddProduct(true);
+  }
+
+  function handleRemoveProduct(){
+      setRemoveProduct(true);
+  }
+
+  function handleCloseProduct(){
+      setShowAddProduct(false);
+      setRemoveProduct(false);
+  }
+
   return (
-    <div className="products-container">
+    <>
+        <div className="products-container">
       <div className="products">
-        <div className='add' >
+        <div className='add'  onClick={handleAddProducts} >
             <h3>Add Product</h3>
         </div>
-        <div className='remove' >
+        <div className='remove'  onClick={handleRemoveProduct} >
             <h3>Remove Product</h3>
         </div>
       </div>
 
-      <form className="form">
+    {showAddProduct && (
+        <form className="form">
+        <div className='close' onClick={handleCloseProduct} >
+            &times;
+        </div>
         <label htmlFor="productName">Product Name</label>
         <input type="text" id="productName" name="productName" placeholder="Enter product name"  required />
-
         <label>
           Image Link
         </label>
@@ -83,7 +105,24 @@ export function Products() {
         <input type="text" id="connectivity" name="connectivity" placeholder="Enter connectivity options" />
         <button type="submit">Add Product</button>
       </form>
+    )}
+
+   {removeProduct && (
+     <form className='form' >
+      <div onClick={handleCloseProduct} >
+        close
+      </div>
+     <label htmlFor="productName">Product Name</label>
+         <input type="text" id="productName" name="productName" placeholder="Enter product name"  required />
+         <label htmlFor="productName">Product Id</label>
+         <input type="text" id="productName" name="productId" placeholder="Enter product Id"  required />
+         <button type="submit" className='remove' >Remove Product</button>
+     </form>
+   )}
 
     </div>
+    </>
+
+  
   );
 }

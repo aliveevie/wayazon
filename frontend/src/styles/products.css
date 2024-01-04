@@ -92,3 +92,26 @@ button {
 button:hover {
   background-color: #45a049;
 }
+
+/* addProducts.css (or your relevant CSS file) */
+
+.close {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button {
+  padding: 10px;
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-button:hover {
+  background-color: #cc4b38; /* Darker red on hover */
+}
