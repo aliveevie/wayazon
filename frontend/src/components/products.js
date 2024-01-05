@@ -11,6 +11,11 @@ export function Products() {
   const [removeProduct, setRemoveProduct] = useState(false);
   const [loader, setLoader] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showProducts, setShowProducts] = useState(false);
+
+  function handleShowProducts(){
+        setShowProducts(true);
+  }
 
   function handleLoader(){
       setLoader(true);
@@ -299,6 +304,36 @@ export function Products() {
         <button type="submit">Add Product</button>
       </form>
    )}
+
+      {removeProduct && (
+          <form className='form'>
+              <div className='close' onClick={handleCloseProduct}>
+          <button className='close-button'>&times; Close</button>
+        </div>
+          <label htmlFor="camera">Product Name</label>
+               <input
+                 type="text"
+                 id="productName"
+                 name="productName"
+                 placeholder="Enter product Name"
+                 value={formData.productName}
+                 onChange={handleChange}
+                 required
+               />
+       
+               <label htmlFor="connectivity">Product Id</label>
+               <input
+                 type="text"
+                 id="connectivity"
+                 name="productId"
+                 placeholder="Enter The product Id"
+                 value={formData.productId}
+                 onChange={handleChange}
+                 required
+               />
+                <button type="submit" className='remove' >Remove Product</button>
+          </form>
+      )}
 
    {loader && <Loader />}
 
