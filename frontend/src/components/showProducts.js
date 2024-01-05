@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Loader } from "../components/loader.js";
 import '../styles/showProducts.css';
+import { ShowDetails } from "./showDetails.js";
 
 export function ShowProducts() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentData, setCurrentData] = useState([]);
+  const [details, setDetails] = useState(false);
   const productsPerPage = 20;
-
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
@@ -29,6 +31,12 @@ export function ShowProducts() {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+
+  function handleCurrentData(data){
+        setCurrentData(data);
+        setDetails(!details)
+  }
+
   return (
     <>
       {products.length === 0 && <Loader />}
@@ -46,8 +54,7 @@ export function ShowProducts() {
               <tr key={index}>
                 <td>{product.product_id}</td>
                 <td>{product.product_name}</td>
-                
-                <td><button>View Details</button></td>
+                <td><button  onClick={() => handleCurrentData(product)} >View Details</button></td>
               </tr>
             ))}
           </tbody>
@@ -62,6 +69,9 @@ export function ShowProducts() {
           </button>
         </div>
       </div>
+      {details && (
+        <ShowDetails currentData={currentData} handleCurrentData={handleCurrentData} />
+      )}
     </>
   );
 }

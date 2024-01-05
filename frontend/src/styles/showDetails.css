@@ -1,0 +1,77 @@
+/* showDetails.css */
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    max-height: 80vh; /* Set a maximum height for the modal content */
+    overflow-y: auto; 
+    margin-top: 30px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+  }
+  
+  .details-container {
+    text-align: left;
+  }
+  
+  .details-container h3 {
+    font-size: 18px;
+  }
+  
+  .details-container p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+    }
+  }
+  

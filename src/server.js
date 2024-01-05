@@ -149,6 +149,18 @@ app.get('/api/admin/products', async (req, res) => {
   }
 });
 
+// Example using query parameters
+app.get('/categories/phones', async (req, res) => {
+  const category = req.query.category; // Extracts category from query parameters
+  const subCategory = req.query.subCategory; // Extracts subCategory from query parameters
+  
+  // Use category and subCategory as needed
+  console.log(category, subCategory);
+
+  // Your logic here...
+});
+
+
 
 
 

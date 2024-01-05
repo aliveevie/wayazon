@@ -20,6 +20,9 @@ export function Products() {
 
   function handleShowProducts(){
         setShowProducts(true);
+        setShowAddProduct(false);
+        setRemoveProduct(false);
+        setSuccess(false);
   }
 
   function handleLoader(){
@@ -27,18 +30,21 @@ export function Products() {
       setShowAddProduct(false);
       setRemoveProduct(false);
       setSuccess(false);
+      setShowProducts(false);
   }
 
   function handleAddProducts(){
         setApi('/api/admin/products');
         setShowAddProduct(true);
         setRemoveProduct(false);
+        setShowProducts(false);
   }
 
   function handleRemoveProduct(){
       setApi('/api/admin/remove');
       setRemoveProduct(true);
       setShowAddProduct(false);
+      setShowProducts(false);
   }
 
   function handleCloseProduct(){
@@ -360,7 +366,7 @@ export function Products() {
 
    {success && <Success message={message} />}
 
-   <ShowProducts />
+   {showProducts && <ShowProducts />}
 
     </div>
 

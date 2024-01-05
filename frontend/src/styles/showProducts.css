@@ -15,6 +15,10 @@
     text-align: left;
     padding: 8px;
   }
+
+  td{
+    color: wheat;
+  }
   
   th {
     background-color: #f2f2f2;
