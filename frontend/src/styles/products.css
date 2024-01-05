@@ -4,7 +4,6 @@
     display: block;
     justify-content: center;
     align-items: center;
-    width: 50%;
     background-color: darkblue;
     margin: 0 auto;
   }
@@ -54,7 +53,7 @@
 }
 
 .form {
-  width: 100%;
+  width: 80%;
   max-width: 400px; /* Adjust as needed */
   background-color: #f1f1f1;
   padding: 20px;

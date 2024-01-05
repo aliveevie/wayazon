@@ -1,13 +1,21 @@
 // Products component
-
 import { useState } from 'react';
 import React from 'react';
 import '../styles/products.css';
+import { Loader } from './loader';
 
 export function Products() {
 
   const [showAddProduct, setShowAddProduct] = useState(false);
   const [removeProduct, setRemoveProduct] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const [success, setSuccess] = useState(null);
+
+  function handleLoader(){
+      setLoader(true);
+      setShowAddProduct(false);
+      setRemoveProduct(false);
+  }
 
   function handleAddProducts(){
         setShowAddProduct(true);
@@ -22,6 +30,57 @@ export function Products() {
       setRemoveProduct(false);
   }
 
+  const [formData, setFormData] = useState({
+    productName: '',
+    imageLink: '',
+    category: '',
+    subCategory: '',
+    description: '',
+    color: '',
+    brand: '',
+    batterySize: '',
+    batteryCapacity: '',
+    displaySize: '',
+    processor: '',
+    storage: '',
+    ram: '',
+    camera: '',
+    connectivity: '',
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/admin/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log('Product added successfully');
+        // You can add additional logic or redirection here if needed
+        setLoader(false);
+        setShowAddProduct(true);
+        setRemoveProduct(true);
+      } else {
+        console.error('Failed to add product');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <>
         <div className="products-container">
@@ -35,25 +94,57 @@ export function Products() {
       </div>
 
     {showAddProduct && (
-        <form className="form">
-        <div className='close' onClick={handleCloseProduct} >
-            &times;
+        <form className="form" onSubmit={handleSubmit}>
+        <div className='close' onClick={handleCloseProduct}>
+          <button className='close-button'>&times; Close</button>
         </div>
         <label htmlFor="productName">Product Name</label>
-        <input type="text" id="productName" name="productName" placeholder="Enter product name"  required />
-        <label>
-          Image Link
-        </label>
-        <input type='text' id="name" name="name"  required placeholder='Enter the Link of the Image' />
+        <input
+          type="text"
+          id="productName"
+          name="productName"
+          placeholder="Enter product name"
+          value={formData.productName}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="imageLink">Image Link</label>
+  
+        <input
+          type="text"
+          id="imageLink"
+          name="imageLink"
+          placeholder="Enter the Link of the Image"
+          value={formData.imageLink}
+          onChange={handleChange}
+          required
+        />
+
+      <a href='https://postimages.org/' target='_blank' rel="noreferrer" >Get Image Link Here</a>
 
         <label htmlFor="category">Choose Category</label>
-        <select id="category" name="category"  >
+        <select
+          id="category"
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Category</option>
           <option value="phones">Phones</option>
           <option value="accessories">Accessories</option>
         </select>
 
         <label htmlFor="subCategory">Choose SubCategory</label>
-        <select id="subCategory" name="subCategory">
+        <select
+          id="subCategory"
+          name="subCategory"
+          value={formData.subCategory}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select SubCategory</option>
           <optgroup label="Phones">
             <option value="londonUsed">London Used</option>
             <option value="smartAndroid">Smart Android</option>
@@ -70,57 +161,121 @@ export function Products() {
         </select>
 
         <label htmlFor="description">Add Description of Each Item</label>
-        <textarea id="description" name="description" placeholder="Enter description"></textarea>
-        <label htmlFor="description">Add Description of Each Item</label>
-        <textarea id="description" name="description" placeholder="Enter description"></textarea>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Enter description"
+          value={formData.description}
+          onChange={handleChange}
+        ></textarea>
 
         <label htmlFor="color">Color</label>
-        <input type="text" id="color" name="color" placeholder="Enter color" />
+        <input
+          type="text"
+          id="color"
+          name="color"
+          placeholder="Enter color"
+          value={formData.color}
+          onChange={handleChange}
+        />
 
         <label htmlFor="brand">Brand</label>
-        <input type="text" id="brand" name="brand" placeholder="Enter brand" />
+        <input
+          type="text"
+          id="brand"
+          name="brand"
+          placeholder="Enter brand"
+          value={formData.brand}
+          onChange={handleChange}
+        />
 
         <label htmlFor="batterySize">Battery Size</label>
-        <input type="text" id="batterySize" name="batterySize" placeholder="Enter battery size" />
+        <input
+          type="text"
+          id="batterySize"
+          name="batterySize"
+          placeholder="Enter battery size"
+          value={formData.batterySize}
+          onChange={handleChange}
+        />
 
         <label htmlFor="batteryCapacity">Battery Capacity</label>
-        <input type="text" id="batteryCapacity" name="batteryCapacity" placeholder="Enter battery capacity" />
+        <input
+          type="text"
+          id="batteryCapacity"
+          name="batteryCapacity"
+          placeholder="Enter battery capacity"
+          value={formData.batteryCapacity}
+          onChange={handleChange}
+        />
 
         <label htmlFor="displaySize">Display Size</label>
-        <input type="text" id="displaySize" name="displaySize" placeholder="Enter display size" />
+        <input
+          type="text"
+          id="displaySize"
+          name="displaySize"
+          placeholder="Enter display size"
+          value={formData.displaySize}
+          onChange={handleChange}
+        />
 
         <label htmlFor="processor">Processor</label>
-        <input type="text" id="processor" name="processor" placeholder="Enter processor details" />
+        <input
+          type="text"
+          id="processor"
+          name="processor"
+          placeholder="Enter processor details"
+          value={formData.processor}
+          onChange={handleChange}
+        />
 
         <label htmlFor="storage">Storage</label>
-        <input type="text" id="storage" name="storage" placeholder="Enter storage capacity" />
+        <input
+          type="text"
+          id="storage"
+          name="storage"
+          placeholder="Enter storage capacity"
+          value={formData.storage}
+          onChange={handleChange}
+        />
 
         <label htmlFor="ram">RAM</label>
-        <input type="text" id="ram" name="ram" placeholder="Enter RAM size" />
+        <input
+          type="text"
+          id="ram"
+          name="ram"
+          placeholder="Enter RAM size"
+          value={formData.ram}
+          onChange={handleChange}
+        />
 
         <label htmlFor="camera">Camera</label>
-        <input type="text" id="camera" name="camera" placeholder="Enter camera details" />
+        <input
+          type="text"
+          id="camera"
+          name="camera"
+          placeholder="Enter camera details"
+          value={formData.camera}
+          onChange={handleChange}
+        />
 
         <label htmlFor="connectivity">Connectivity</label>
-        <input type="text" id="connectivity" name="connectivity" placeholder="Enter connectivity options" />
-        <button type="submit">Add Product</button>
-      </form>
-    )}
+        <input
+          type="text"
+          id="connectivity"
+          name="connectivity"
+          placeholder="Enter connectivity options"
+          value={formData.connectivity}
+          onChange={handleChange}
+        />
 
-   {removeProduct && (
-     <form className='form' >
-      <div onClick={handleCloseProduct} >
-        close
-      </div>
-     <label htmlFor="productName">Product Name</label>
-         <input type="text" id="productName" name="productName" placeholder="Enter product name"  required />
-         <label htmlFor="productName">Product Id</label>
-         <input type="text" id="productName" name="productId" placeholder="Enter product Id"  required />
-         <button type="submit" className='remove' >Remove Product</button>
-     </form>
+        <button type="submit" onClick={handleLoader} >Add Product</button>
+      </form>
    )}
 
     </div>
+
+   
     </>
 
   

@@ -37,6 +37,77 @@ app.post('/api/admin/login', async (req, res) => {
 
 });
 
+
+app.post('/api/admin/products', async (req, res) => {
+
+    try {
+        const {
+          productName,
+          imageLink,
+          category,
+          subCategory,
+          description,
+          color,
+          brand,
+          batterySize,
+          batteryCapacity,
+          displaySize,
+          processor,
+          storage,
+          ram,
+          camera,
+          connectivity,
+        } = req.body;
+    
+        const insertQuery = `
+          INSERT INTO products (
+            product_name,
+            image_link,
+            category,
+            sub_category,
+            description,
+            color,
+            brand,
+            battery_size,
+            battery_capacity,
+            display_size,
+            processor,
+            storage,
+            ram,
+            camera,
+            connectivity
+          ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+        `;
+    
+        const values = [
+          productName,
+          imageLink,
+          category,
+          subCategory,
+          description,
+          color,
+          brand,
+          batterySize,
+          batteryCapacity,
+          displaySize,
+          processor,
+          storage,
+          ram,
+          camera,
+          connectivity,
+        ];
+    
+        const result = await db.query(insertQuery, values);
+    
+        res.status(201).json({ message: 'Product added successfully' });
+      } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+      }
+});
+
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
