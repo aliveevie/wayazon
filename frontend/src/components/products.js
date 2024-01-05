@@ -4,6 +4,7 @@ import React from 'react';
 import '../styles/products.css';
 import { Loader } from './loader';
 import { Success } from './success';
+import { ShowProducts } from './showProducts';
 
 export function Products() {
 
@@ -12,6 +13,10 @@ export function Products() {
   const [loader, setLoader] = useState(false);
   const [success, setSuccess] = useState(false);
   const [showProducts, setShowProducts] = useState(false);
+  const [api, setApi] = useState(null);
+  const [message, setMessage] = useState(null);
+
+
 
   function handleShowProducts(){
         setShowProducts(true);
@@ -25,11 +30,15 @@ export function Products() {
   }
 
   function handleAddProducts(){
+        setApi('/api/admin/products');
         setShowAddProduct(true);
+        setRemoveProduct(false);
   }
 
   function handleRemoveProduct(){
+      setApi('/api/admin/remove');
       setRemoveProduct(true);
+      setShowAddProduct(false);
   }
 
   function handleCloseProduct(){
@@ -53,14 +62,17 @@ export function Products() {
     ram: '',
     camera: '',
     connectivity: '',
+    productId: ''
   });
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     handleLoader();
 
     try {
-      const response = await fetch('/api/admin/products', {
+      const response = await fetch(api, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,10 +80,14 @@ export function Products() {
         body: JSON.stringify(formData),
       });
 
+      const responseData = await response.json();
+      console.log(responseData)
+
       if (response.ok) {
         setLoader(false);
         setSuccess(true);
         resetFormData();
+        setMessage(responseData.message)
 
         setTimeout(() => {
           setSuccess(false)
@@ -79,6 +95,7 @@ export function Products() {
 
       } else {
         console.error('Failed to add product');
+
       }
     } catch (error) {
       console.error('Error:', error);
@@ -117,6 +134,9 @@ export function Products() {
     <>
         <div className="products-container">
       <div className="products">
+      <div className='add'  onClick={handleShowProducts} >
+            <h3>View Product List</h3>
+        </div>
         <div className='add'  onClick={handleAddProducts} >
             <h3>Add Product</h3>
         </div>
@@ -220,7 +240,7 @@ export function Products() {
           value={formData.brand}
           onChange={handleChange}
         />
-
+      
         <label htmlFor="batterySize">Battery Size</label>
         <input
           type="text"
@@ -305,8 +325,9 @@ export function Products() {
       </form>
    )}
 
+
       {removeProduct && (
-          <form className='form'>
+          <form className='form' onSubmit={handleSubmit} >
               <div className='close' onClick={handleCloseProduct}>
           <button className='close-button'>&times; Close</button>
         </div>
@@ -337,7 +358,9 @@ export function Products() {
 
    {loader && <Loader />}
 
-   {success && <Success />}
+   {success && <Success message={message} />}
+
+   <ShowProducts />
 
     </div>
 

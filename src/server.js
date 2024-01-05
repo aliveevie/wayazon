@@ -107,6 +107,51 @@ app.post('/api/admin/products', async (req, res) => {
 });
 
 
+app.post('/api/admin/remove', async (req, res) => {
+  try {
+    const { productName, productId } = req.body;
+
+    if (!productName && !productId) {
+      return res.status(400).json({ message: 'Please provide productName or productId' });
+    }
+
+    let deleteQuery = '';
+
+    if (productName) {
+      // Delete based on product name
+      deleteQuery = 'DELETE FROM products WHERE product_name = $1';
+    } else if (productId) {
+      // Delete based on product ID
+      deleteQuery = 'DELETE FROM products WHERE product_id = $1';
+    }
+
+    const result = await db.query(deleteQuery, [productName || productId]);
+
+    if (result.rowCount > 0) {
+      res.status(200).json({ message: 'Product removed successfully' });
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/admin/products', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM products');
+    
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
