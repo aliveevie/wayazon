@@ -149,19 +149,118 @@ app.get('/api/admin/products', async (req, res) => {
   }
 });
 
-// Example using query parameters
-app.get('/categories/phones', async (req, res) => {
-  const category = req.query.category; // Extracts category from query parameters
-  const subCategory = req.query.subCategory; // Extracts subCategory from query parameters
+// Example for phones - London Used
+app.get('/api/admin/phones/londonused', async (req, res) => {
+  const category = 'phones';
+  const subCategory = 'londonUsed';
   
-  // Use category and subCategory as needed
-  console.log(category, subCategory);
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
-  // Your logic here...
+// Example for phones - Smart Android
+app.get('/api/admin/phones/smartandroid', async (req, res) => {
+  const category = 'phones';
+  const subCategory = 'smartAndroid';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// Example for phones - Samsung
+app.get('/api/admin/phones/samsung', async (req, res) => {
+  const category = 'phones';
+  const subCategory = 'samsung';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// Example for phones - Others
+app.get('/api/admin/phones/others', async (req, res) => {
+  const category = 'phones';
+  const subCategory = 'others';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
 });
 
 
+// Example for accessories - Mp3 and Speakers
+app.get('/api/admin/accessories/mp3speakers', async (req, res) => {
+  const category = 'accessories';
+  const subCategory = 'mp3Speakers';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
+// Example for accessories - Bluetooth and Airphones
+app.get('/api/admin/accessories/bluetoothairphones', async (req, res) => {
+  const category = 'accessories';
+  const subCategory = 'bluetoothAirphones';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// Example for accessories - Smart Watch
+app.get('/api/admin/accessories/smartwatch', async (req, res) => {
+  const category = 'accessories';
+  const subCategory = 'smartWatch';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// Example for accessories - Screen Guard and Cover
+app.get('/api/admin/accessories/screenguardcover', async (req, res) => {
+  const category = 'accessories';
+  const subCategory = 'screenGuardCover';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 
 

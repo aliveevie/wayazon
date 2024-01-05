@@ -1,6 +1,8 @@
 import phoneImages from "../data/phoneData";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobileHeader";
+import { LondonUsed } from "../data/londonUsed";
+
 
 export function Phones({mobile, handleMobile}){
    return (
@@ -27,6 +29,9 @@ export function Phones({mobile, handleMobile}){
         ))}
         </div>
     </div>
+
+    <LondonUsed />
+
    </>
    )
 }
