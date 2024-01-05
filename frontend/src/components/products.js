@@ -3,18 +3,20 @@ import { useState } from 'react';
 import React from 'react';
 import '../styles/products.css';
 import { Loader } from './loader';
+import { Success } from './success';
 
 export function Products() {
 
   const [showAddProduct, setShowAddProduct] = useState(false);
   const [removeProduct, setRemoveProduct] = useState(false);
   const [loader, setLoader] = useState(false);
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   function handleLoader(){
       setLoader(true);
       setShowAddProduct(false);
       setRemoveProduct(false);
+      setSuccess(false);
   }
 
   function handleAddProducts(){
@@ -50,6 +52,7 @@ export function Products() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    handleLoader();
 
     try {
       const response = await fetch('/api/admin/products', {
@@ -61,11 +64,14 @@ export function Products() {
       });
 
       if (response.ok) {
-        console.log('Product added successfully');
-        // You can add additional logic or redirection here if needed
         setLoader(false);
-        setShowAddProduct(true);
-        setRemoveProduct(true);
+        setSuccess(true);
+        resetFormData();
+
+        setTimeout(() => {
+          setSuccess(false)
+        }, 7000);
+
       } else {
         console.error('Failed to add product');
       }
@@ -80,6 +86,27 @@ export function Products() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const resetFormData = () => {
+    setFormData({
+      productName: '',
+      imageLink: '',
+      category: '',
+      subCategory: '',
+      description: '',
+      color: '',
+      brand: '',
+      batterySize: '',
+      batteryCapacity: '',
+      displaySize: '',
+      processor: '',
+      storage: '',
+      ram: '',
+      camera: '',
+      connectivity: '',
+    });
+  };
+  
 
   return (
     <>
@@ -269,13 +296,16 @@ export function Products() {
           onChange={handleChange}
         />
 
-        <button type="submit" onClick={handleLoader} >Add Product</button>
+        <button type="submit">Add Product</button>
       </form>
    )}
 
+   {loader && <Loader />}
+
+   {success && <Success />}
+
     </div>
 
-   
     </>
 
   

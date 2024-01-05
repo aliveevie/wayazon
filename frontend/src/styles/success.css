@@ -1,0 +1,19 @@
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .success-container img {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    margin-bottom: 20px;
+  }
+  
+  .success-container h3 {
+    font-size: 18px;
+    color: #4caf50; /* Green color for success message */
+  }
+  
