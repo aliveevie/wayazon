@@ -149,119 +149,6 @@ app.get('/api/admin/products', async (req, res) => {
   }
 });
 
-// Example for phones - London Used
-app.get('/api/admin/phones/londonused', async (req, res) => {
-  const category = 'phones';
-  const subCategory = 'londonUsed';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for phones - Smart Android
-app.get('/api/admin/phones/smartandroid', async (req, res) => {
-  const category = 'phones';
-  const subCategory = 'smartAndroid';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for phones - Samsung
-app.get('/api/admin/phones/samsung', async (req, res) => {
-  const category = 'phones';
-  const subCategory = 'samsung';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for phones - Others
-app.get('/api/admin/phones/others', async (req, res) => {
-  const category = 'phones';
-  const subCategory = 'others';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-
-// Example for accessories - Mp3 and Speakers
-app.get('/api/admin/accessories/mp3speakers', async (req, res) => {
-  const category = 'accessories';
-  const subCategory = 'mp3Speakers';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for accessories - Bluetooth and Airphones
-app.get('/api/admin/accessories/bluetoothairphones', async (req, res) => {
-  const category = 'accessories';
-  const subCategory = 'bluetoothAirphones';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for accessories - Smart Watch
-app.get('/api/admin/accessories/smartwatch', async (req, res) => {
-  const category = 'accessories';
-  const subCategory = 'smartWatch';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
-// Example for accessories - Screen Guard and Cover
-app.get('/api/admin/accessories/screenguardcover', async (req, res) => {
-  const category = 'accessories';
-  const subCategory = 'screenGuardCover';
-  
-  try {
-    const result = await db.query('SELECT * FROM products WHERE category=$1 AND sub_category=$2', [category, subCategory]);
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal Server Error' });
-  }
-});
-
 app.get('/api/admin/phones', async (req, res) => {
   const category = 'phones';
   const subCategory = 'screenGuardCover';
@@ -285,6 +172,56 @@ app.get('/api/admin/accessories', async (req, res) => {
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+app.post('/api/admin/teams/add', async (req, res) => {
+  try {
+    const { name, title, image, description } = req.body;
+
+    const result = await db.query(
+      'INSERT INTO team_members (name, title, image_link, description) VALUES ($1, $2, $3, $4) RETURNING *',
+      [name, title, image, description]
+    );
+
+    const addedMember = result.rows[0];
+
+    res.status(200).json({ success: true, message: 'Team member added successfully', member: addedMember });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+app.post('/api/admin/teams/remove', async (req, res) => {
+  try {
+    const { id, name } = req.body;
+
+    // Check if either ID or name is provided
+    if (!id && !name) {
+      return res.status(400).json({ success: false, message: 'Provide either ID or name for deletion' });
+    }
+
+    let result;
+
+    if (id) {
+      // Delete by ID
+      result = await db.query('DELETE FROM team_members WHERE id = $1 RETURNING *', [id]);
+    } else {
+      // Delete by name
+      result = await db.query('DELETE FROM team_members WHERE name = $1 RETURNING *', [name]);
+    }
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'Team member not found' });
+    }
+
+    const deletedMember = result.rows[0];
+
+    res.status(200).json({ success: true, message: 'Team member deleted successfully', member: deletedMember });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 });
 

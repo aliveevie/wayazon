@@ -40,7 +40,7 @@ const data = [
     title: 'Logistics and Delivery Manager',
     image: nuraImage,
     description: `
-      Usman Ado, a Business Administration and Management Studies graduate from Jigawa State Polytechnic, Dutse. Committed to serving customers promptly within specified timeframes, I prioritize honesty and trustworthiness in all endeavors. Eager to contribute my skills and dedication to achieve mutual success in any business engagements.
+    Nura M Usman, a distinguished Qur'anic scholar and memorizer of the Holy Qur'an, bringing a profound understanding of Islamic teachings to business endeavors. Known for discipline, dedication, and ethical values, I aim to contribute a holistic perspective to professional engagements, fostering a harmonious and principled work environment.
     `
   },
   {

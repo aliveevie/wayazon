@@ -3,6 +3,7 @@ import { DashboardHeader } from "../components/dashboardHeader";
 import '../styles/admin.css';
 import { Products } from '../components/products';
 import { useState } from 'react';
+import { TeamMembers } from '../components/team';
 
 
 export function Dashboard() {
@@ -37,7 +38,7 @@ export function Dashboard() {
       <div className="dashboard">
       
         <div className="management">
-          <div className="manage-item">
+          <div className="manage-item"  onClick={handleTeamMembers} >
             <h3>Manage Team Members</h3>
             <i className="fas fa-user icon"></i>
           </div>
@@ -53,6 +54,8 @@ export function Dashboard() {
       </div>
       
     {manageProduct && (<Products/>)}
+
+    {manageTeamMembers && (<TeamMembers />)}
 
     </>
   );

@@ -1,4 +1,3 @@
-import phoneImages from "../data/phoneData";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobileHeader";
 import { LondonUsed } from "../data/londonUsed";
