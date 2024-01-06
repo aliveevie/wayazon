@@ -12,6 +12,7 @@ export function MobileHeader({handleMobile}) {
   return (
     <div className="mobile-header">
       <nav className="mobile-sideBar">
+      <Link to="/" onClick={handleMobile} >Home</Link>
         <Link to="/about" onClick={handleMobile} >About Us</Link>
         <Link to="/contact" onClick={handleMobile} >Contact Us</Link>
         <div className="category-link">
@@ -60,7 +61,7 @@ export function MobileHeader({handleMobile}) {
             </div>
           )}
         </div>
-        <Link to="/" onClick={handleMobile} >Home</Link>
+ 
       </nav>
     </div>
   );

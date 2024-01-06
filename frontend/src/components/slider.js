@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import SliderData from '../data/sliderImages';
+// import SliderData from '../data/sliderImages';
 import '../styles/slider.css';
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
+
+  const [SliderData, setSliderData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/admin/products');
+      const teams = await response.json();
+      setSliderData(teams);
+    }
+
+    fetchData();
+  }, []);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -38,7 +50,7 @@ const ImageSlider = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img src={slide.image} alt={slide.name} className='image' />
+              <img src={slide.image_link} alt={slide.product_name} className='image' />
             )}
           </div>
         );

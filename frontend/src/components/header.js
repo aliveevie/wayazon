@@ -22,6 +22,7 @@ export function Header({ mobile, handleMobile }) {
         <img src={logo} alt="Wayazone logo" width="70" />
       </div>
       <nav className="navBar" id='desktop-menu'>
+       <Link to="/">Home</Link>
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
         <Link onMouseEnter={handleHover} onMouseLeave={handleLeave}>
@@ -62,7 +63,7 @@ export function Header({ mobile, handleMobile }) {
             </div>
           )}
         </Link>
-        <Link to="/">Home</Link>
+       
       </nav>
       <div id="hamburger" onClick={handleMobile}>
         &#x2630;
