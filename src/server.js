@@ -262,6 +262,32 @@ app.get('/api/admin/accessories/screenguardcover', async (req, res) => {
   }
 });
 
+app.get('/api/admin/phones', async (req, res) => {
+  const category = 'phones';
+  const subCategory = 'screenGuardCover';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1', [category]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+app.get('/api/admin/accessories', async (req, res) => {
+  const category = 'accessories';
+  const subCategory = 'screenGuardCover';
+  
+  try {
+    const result = await db.query('SELECT * FROM products WHERE category=$1', [category]);
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 
 
 app.get('/', (req, res) => {

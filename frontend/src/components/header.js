@@ -24,7 +24,7 @@ export function Header({ mobile, handleMobile }) {
       <nav className="navBar" id='desktop-menu'>
         <Link to="/about">About Us</Link>
         <Link to="/contact">Contact Us</Link>
-        <Link to="/categories" onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+        <Link onMouseEnter={handleHover} onMouseLeave={handleLeave}>
           Categories
           {showCategories && (
             <div className='dropdown'>

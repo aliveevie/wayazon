@@ -3,7 +3,7 @@ import { Loader } from "../components/loader";
 import { useState, useEffect } from "react";
 import { ShowDetails } from "../components/showDetails";
 
-export function SmartWatch() {
+export function AccessData() {
   const [products, setProducts] = useState([]);
   const [currentData, setCurrentData] = useState(null);
   const [details, setDetails] = useState(false);
