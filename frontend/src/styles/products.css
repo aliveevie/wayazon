@@ -118,7 +118,11 @@ button:hover {
 
 @media screen and (max-width:800px) {
       button{
-        
         margin-bottom: 10px;
+      }
+
+      .products-container{
+        width: 100%;
+        margin: auto;
       }
 }

@@ -62,8 +62,8 @@ export function ShowProducts() {
               <tr key={index}>
                 <td>{product.product_id}</td>
                 <td>{product.product_name}</td>
-                <td><button  onClick={() => handleCurrentData(product)} >View Details</button></td>
-                <td><button  onClick={() => handleEditButton(product)}  >Edit Details</button></td>
+                <td><button  onClick={() => handleCurrentData(product)} >View</button></td>
+                <td><button  onClick={() => handleEditButton(product)}  >Edit</button></td>
               </tr>
             ))}
           </tbody>

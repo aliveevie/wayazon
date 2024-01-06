@@ -3,8 +3,6 @@
 .dashboard {
     background-color: lightblue;
     color: white;
-    padding: 20px;
-    text-align: center;
   }
   
   .welcome-text {
@@ -14,9 +12,6 @@
   .management {
     display: flex;
     justify-content: space-around;
-   
-    padding: 10px;
-    margin-top: 20px;
   }
   
   .manage-item {

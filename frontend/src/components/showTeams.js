@@ -64,8 +64,8 @@ export function ShowTeamMembers() {
               <tr key={index}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
-                <td><button  onClick={() => handleCurrentData(product)} >View Details</button></td>
-                <td><button  onClick={() => handleEditButton(product)}  >Edit Details</button></td>
+                <td><button  onClick={() => handleCurrentData(product)} >View</button></td>
+                <td><button  onClick={() => handleEditButton(product)}  >Edit</button></td>
               </tr>
             ))}
           </tbody>

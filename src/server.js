@@ -334,6 +334,30 @@ app.post('/api/admin/products/edit', async (req, res) => {
 });
 
 
+app.post('/api/admin/contact', async (req, res) => {
+  try {
+  
+    const { name, email, message } = req.body;
+
+    // Insert data into the contacts table
+    await db.query(
+      'INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)',
+      [name, email, message]
+    );
+
+    res.status(201).json({ message: 'Message sent successfully!' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
+
+
+
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
