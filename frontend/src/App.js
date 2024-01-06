@@ -10,7 +10,7 @@ import { Phones } from './pages/phones';
 import { Accessories } from './pages/smartWatch';
 import { Dashboard } from './pages/admin';
 import { Login } from './components/login';
-import Footer from './components/footer';
+
 
 
 function App() {

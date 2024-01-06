@@ -352,6 +352,19 @@ app.post('/api/admin/contact', async (req, res) => {
   }
 });
 
+// Assuming you are using a PostgreSQL database and have a 'contacts' table
+
+app.get('/api/admin/contact', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM contacts');
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
 
 
 

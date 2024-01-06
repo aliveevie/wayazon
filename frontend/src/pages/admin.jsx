@@ -5,7 +5,7 @@ import { Products } from '../components/products';
 import { useState } from 'react';
 import { TeamMembers } from '../components/team';
 import Footer from '../components/footer';
-
+import { ShowMessages } from '../components/shomsg';
 
 export function Dashboard() {
 
@@ -47,8 +47,8 @@ export function Dashboard() {
             <h3>Manage Products</h3>
             <i className="fas fa-box icon"></i>
           </div>
-          <div className="manage-item">
-            <h3>Manage Home Page</h3>
+          <div className="manage-item" onClick={handleHome} >
+            <h3>Customer Messages</h3>
             <i className="fas fa-home icon"></i>
           </div>
         </div>
@@ -57,6 +57,8 @@ export function Dashboard() {
     {manageProduct && (<Products/>)}
 
     {manageTeamMembers && (<TeamMembers />)}
+
+    {manageHome && <ShowMessages />}
 
     <Footer />
 
