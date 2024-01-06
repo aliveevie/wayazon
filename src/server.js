@@ -269,6 +269,71 @@ app.post('/api/admin/editmember', async (req, res) => {
   }
 });
 
+app.post('/api/admin/products/edit', async (req, res) => {
+  try {
+    const {
+      id,
+      name,
+      description,
+      color,
+      brand,
+      batterySize,
+      batteryCapacity,
+      displaySize,
+      processor,
+      storage,
+      ram,
+      camera,
+      connectivity,
+      image_link
+    } = req.body;
+
+    // Assuming you have a SQL query to update the product in the database
+    const updateProductQuery = `
+      UPDATE products
+      SET
+        product_name = $2,
+        description = $3,
+        color = $4,
+        brand = $5,
+        battery_size = $6,
+        battery_capacity = $7,
+        display_size = $8,
+        processor = $9,
+        storage = $10,
+        ram = $11,
+        camera = $12,
+        connectivity = $13,
+        image_link = $14
+      WHERE
+        product_id = $1
+    `;
+
+    const result = await db.query(updateProductQuery, [
+      id,
+      name,
+      description,
+      color,
+      brand,
+      batterySize,
+      batteryCapacity,
+      displaySize,
+      processor,
+      storage,
+      ram,
+      camera,
+      connectivity,
+      image_link
+    ]);
+
+    res.status(200).json({ message: 'Product updated successfully' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));

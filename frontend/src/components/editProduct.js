@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 export function EditProductDetails({ currentData, handleEditButton }) {
   const [formData, setFormData] = useState({
+    id:currentData.product_id,
     name: currentData.product_name,
     description: currentData.description,
     color: currentData.color,
