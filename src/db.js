@@ -18,5 +18,4 @@ pool.query('SELECT NOW()', (err, result) => {
 
 module.exports = pool;
 
-
 //CONNECTION1='postgresql://postgres:EVie1234@localhost:5432/schools'

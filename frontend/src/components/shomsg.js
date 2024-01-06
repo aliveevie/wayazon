@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Loader } from "../components/loader.js";
-import '../styles/showProducts.css';
+//  import '../styles/showProducts.css';
 import { ShowDetails } from "./showDetails.js";
 import { EditProductDetails } from "./editProduct.js";
 import formatDate from "../data/formatDate.js";
@@ -51,7 +51,7 @@ export function ShowMessages() {
 
   return (
     <>
-      {products.length === 0 && <Loader />}
+     
       <div className="products-table">
         <table>
           <thead>
@@ -68,6 +68,7 @@ export function ShowMessages() {
               <tr key={index}>
                 <td>{product.contact_id}</td>
                 <td>{product.name}</td>
+                <td>{product.email}</td>
                <td>{product.message}</td>
                <td>{formatDate(product.created_at)}</td>
               </tr>
@@ -84,6 +85,7 @@ export function ShowMessages() {
           </button>
         </div>
       </div>
+      {products.length === 0 && <Loader />}
     </>
   );
 }
