@@ -4,7 +4,7 @@ import React from 'react';
 import '../styles/products.css';
 import { Loader } from './loader';
 import { Success } from './success';
-import { ShowProducts } from './showProducts';
+import { ShowTeamMembers } from './showTeams';
 
 
 export function TeamMembers() {
@@ -133,7 +133,7 @@ export function TeamMembers() {
     {showAddProduct && (
         <form className="form" onSubmit={handleSubmit}>
         <div className='close' onClick={handleCloseProduct}>
-          <button className='close-button'>&times; Close</button>
+          <button className='remove'>&times; Close</button>
         </div>
         <label htmlFor="productName">Name</label>
         <input
@@ -187,7 +187,7 @@ export function TeamMembers() {
       {removeProduct && (
           <form className='form' onSubmit={handleSubmit} >
               <div className='close' onClick={handleCloseProduct}>
-          <button className='close-button'>&times; Close</button>
+          <button className='remove'>&times; Close</button>
         </div>
           <label htmlFor="Name">Name</label>
                <input
@@ -206,7 +206,6 @@ export function TeamMembers() {
                  id="connectivity"
                  name="memberId"
                  placeholder="Enter The product Id"
-                
                  onChange={handleChange}
                  required
                />
@@ -217,6 +216,8 @@ export function TeamMembers() {
    {loader && <Loader />}
 
    {success && <Success message={message} />}
+
+   {showProducts && <ShowTeamMembers />}
 
     </div>
 

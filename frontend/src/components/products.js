@@ -154,7 +154,7 @@ export function Products() {
     {showAddProduct && (
         <form className="form" onSubmit={handleSubmit}>
         <div className='close' onClick={handleCloseProduct}>
-          <button className='close-button'>&times; Close</button>
+          <button className='remove'>&times; Close</button>
         </div>
         <label htmlFor="productName">Product Name</label>
         <input
@@ -335,7 +335,7 @@ export function Products() {
       {removeProduct && (
           <form className='form' onSubmit={handleSubmit} >
               <div className='close' onClick={handleCloseProduct}>
-          <button className='close-button'>&times; Close</button>
+          <button className='remove'>&times; Close</button>
         </div>
           <label htmlFor="camera">Product Name</label>
                <input

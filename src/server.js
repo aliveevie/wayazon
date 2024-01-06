@@ -226,6 +226,20 @@ app.post('/api/admin/teams/remove', async (req, res) => {
 });
 
 
+app.get('/api/admin/teams', async (req, res) => {
+  try {
+    const result = await db.query('SELECT * FROM team_members');
+    const teamMembers = result.rows;
+
+    res.status(200).json(teamMembers);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
