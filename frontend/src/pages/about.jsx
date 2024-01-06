@@ -3,6 +3,7 @@ import '../styles/about.css';
 import { MobileHeader } from '../components/mobileHeader';
 import { Header } from '../components/header';
 import { useState, useEffect } from 'react';
+import Footer from '../components/footer';
 
 export function About({mobile, handleMobile}){
 
@@ -50,6 +51,7 @@ export function About({mobile, handleMobile}){
         </div>
       </div>
         </div>
+        <Footer />
       </>
 
        

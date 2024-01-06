@@ -5,6 +5,7 @@ import { LondonUsed } from "../data/londonUsed";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobileHeader";
 import { SmartWatch } from "../components/smartWatches";
+import Footer from "../components/footer";
 
 
 export function Home({mobile, handleMobile}){
@@ -17,6 +18,7 @@ export function Home({mobile, handleMobile}){
             <LondonUsed />
             <Slider  slides={SliderData} />
             <AdvertOne />
+            <Footer />
         </>
     )
 }

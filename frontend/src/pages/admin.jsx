@@ -4,6 +4,7 @@ import '../styles/admin.css';
 import { Products } from '../components/products';
 import { useState } from 'react';
 import { TeamMembers } from '../components/team';
+import Footer from '../components/footer';
 
 
 export function Dashboard() {
@@ -56,6 +57,8 @@ export function Dashboard() {
     {manageProduct && (<Products/>)}
 
     {manageTeamMembers && (<TeamMembers />)}
+
+    <Footer />
 
     </>
   );

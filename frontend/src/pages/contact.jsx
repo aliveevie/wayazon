@@ -5,6 +5,7 @@ import { Header } from '../components/header';
 import { MobileHeader } from '../components/mobileHeader';
 import { useState } from 'react';
 import { Success } from '../components/success';
+import Footer from '../components/footer';
 
 export function Contact({mobile, handleMobile}) {
 
@@ -126,6 +127,8 @@ export function Contact({mobile, handleMobile}) {
       </div>
       {success && <Success message={message} />}
     </div>
+
+    <Footer />
    </>
   );
 }

@@ -10,6 +10,7 @@ import { Phones } from './pages/phones';
 import { Accessories } from './pages/smartWatch';
 import { Dashboard } from './pages/admin';
 import { Login } from './components/login';
+import Footer from './components/footer';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/categories/accessories" element={<Accessories mobile={mobile} handleMobile={handleMobile} />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/login" element={<Login  mobile={mobile} handleMobile={handleMobile} />} />
+        
         </Routes>
       </>
     </Router>
