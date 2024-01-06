@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Loader } from "../components/loader.js";
-//  import '../styles/showProducts.css';
-import { ShowDetails } from "./showDetails.js";
-import { EditProductDetails } from "./editProduct.js";
+import '../styles/showProducts.css';
 import formatDate from "../data/formatDate.js";
 
 
 export function ShowMessages() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentData, setCurrentData] = useState([]);
-  const [details, setDetails] = useState(false);
   const productsPerPage = 20;
   const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,7 +20,6 @@ export function ShowMessages() {
     fetchData();
   }, []);
 
-  console.log(products)
 
 
   const nextPage = () => {
@@ -37,17 +30,7 @@ export function ShowMessages() {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  const [edit, setEdit] = useState(false);
 
-  function handleEditButton(data){
-      setCurrentData(data);
-      setEdit(!edit)
-  }
-
-  function handleCurrentData(data){
-        setCurrentData(data);
-        setDetails(!details)
-  }
 
   return (
     <>
