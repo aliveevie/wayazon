@@ -238,7 +238,36 @@ app.get('/api/admin/teams', async (req, res) => {
   }
 });
 
+app.post('/api/admin/editmember', async (req, res) => {
+  try {
+    const {
+      id,
+      name,
+      title,
+      description,
+      Image, // Include image_link in the request body
+      // Add other fields as needed
+    } = req.body;
 
+    
+
+    // Assuming you're using PostgreSQL
+    const result = await db.query(
+      'UPDATE team_members SET name=$1, title=$2, description=$3, image_link=$4 WHERE id=$5 RETURNING *',
+      [name, title, description, Image, id]
+    );
+
+    // Check if the update was successful
+    if (result.rowCount > 0) {
+      res.status(200).json({ message: 'Team member updated successfully'});
+    } else {
+      res.status(404).json({ message: 'Team member not found or update failed' });
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
 
 
 app.get('/', (req, res) => {

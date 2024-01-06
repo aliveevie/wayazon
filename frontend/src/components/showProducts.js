@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Loader } from "../components/loader.js";
 import '../styles/showProducts.css';
 import { ShowDetails } from "./showDetails.js";
+import { EditProductDetails } from "./editProduct.js";
 
 export function ShowProducts() {
   const [products, setProducts] = useState([]);
@@ -31,6 +32,12 @@ export function ShowProducts() {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+  const [edit, setEdit] = useState(false);
+
+  function handleEditButton(data){
+      setCurrentData(data);
+      setEdit(!edit)
+  }
 
   function handleCurrentData(data){
         setCurrentData(data);
@@ -47,6 +54,7 @@ export function ShowProducts() {
               <th>ID</th>
               <th>Product Name</th>
               <th>Details</th>
+              <th>Edit Details</th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +63,7 @@ export function ShowProducts() {
                 <td>{product.product_id}</td>
                 <td>{product.product_name}</td>
                 <td><button  onClick={() => handleCurrentData(product)} >View Details</button></td>
+                <td><button  onClick={() => handleEditButton(product)}  >Edit Details</button></td>
               </tr>
             ))}
           </tbody>
@@ -72,6 +81,8 @@ export function ShowProducts() {
       {details && (
         <ShowDetails currentData={currentData} handleCurrentData={handleCurrentData} />
       )}
+
+      {edit && <EditProductDetails  currentData={currentData} handleEditButton={handleEditButton} />}
     </>
   );
 }
