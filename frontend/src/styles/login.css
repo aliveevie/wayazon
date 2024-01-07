@@ -10,6 +10,8 @@
     background-color: lightblue;
   }
   
+  
+
   .login {
     background-color: #fff;
     padding: 20px;
@@ -21,7 +23,7 @@
   
   .logo {
     width: 80px; /* Adjust the size as needed */
-    margin-bottom: 20px;
+    margin-right: 50px;
   }
   
   form {
@@ -51,5 +53,11 @@
   
   button:hover {
     background-color: #0056b3;
+  }
+
+  @media screen and (max-width:800px) {
+      .logo{
+        margin-left: 50px;
+      }
   }
   

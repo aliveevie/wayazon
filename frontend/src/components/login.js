@@ -2,9 +2,13 @@
 import { useState } from 'react';
 import logo from '../images/logo.png';
 import '../styles/login.css';
+import { useNavigate } from 'react-router-dom';
+
 export function Login() {
 
     const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -23,7 +27,6 @@ export function Login() {
 
           const responseData = await response.json();
       
-          console.log(responseData)
           if (response.ok) {
             // Handle successful login, e.g., redirect or set user state
             if(responseData.Failure==="Error"){
@@ -32,7 +35,7 @@ export function Login() {
                   setError(null)
                 }, 5000);
             }else if(responseData.Failure==="Success"){
-                  window.location = '/admin/dashboard'
+                navigate('/admin/dashboard'); // Redirect to '/admin/dashboard'
             }
           } else {
             // Handle login failure, e.g., show error message
@@ -47,16 +50,21 @@ export function Login() {
   return (
     <div className="login-container">
       <div className="login">
-        <img className="logo" src={logo} alt="Logo" />
+      <img className="logo" src={logo} alt="Logo" />
+        <form onSubmit={handleSubmit}>
+     
         <h3>Login To Your Dashboard</h3>
-        <form  onSubmit={handleSubmit} >
-          <label>Email:</label>
-          <input type="email" placeholder="Enter your email" name="email" />
-          <label>Password:</label>
-          <input type="password" placeholder="Enter your password" name="password" />
-          <button type="submit">Login</button>
-          <p>{error}</p>
-        </form>
+            <label>
+              <i className="fas fa-envelope"></i> Email
+            </label>
+            <input type="email" placeholder="Enter your email" name="email" />
+            <label>
+              <i className="fas fa-lock"></i> Password
+            </label>
+            <input type="password" placeholder="Enter your password" name="password" />
+            <button type="submit">Login</button>
+            <p>{error}</p>
+          </form>
       </div>
     </div>
   );

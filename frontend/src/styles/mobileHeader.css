@@ -57,5 +57,10 @@
       width: 100%;
       display: flex;
     }
+
+    .logo{
+      position: relative;
+      left: -50px;
+    }
   }
   

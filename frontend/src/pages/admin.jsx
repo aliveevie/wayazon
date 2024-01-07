@@ -4,7 +4,6 @@ import '../styles/admin.css';
 import { Products } from '../components/products';
 import { useState } from 'react';
 import { TeamMembers } from '../components/team';
-import Footer from '../components/footer';
 import { ShowMessages } from '../components/shomsg';
 
 export function Dashboard() {
@@ -60,7 +59,7 @@ export function Dashboard() {
 
     {manageHome && <ShowMessages />}
 
-    <Footer />
+    
 
     </>
   );
