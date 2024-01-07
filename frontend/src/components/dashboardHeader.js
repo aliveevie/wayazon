@@ -10,9 +10,9 @@ export function DashboardHeader() {
         <img className='logo' src={logo} alt='logo icon' />
       </Link>
       <div className='menu'>
-        <Link to="/" className='menu-link'>
-          Logout
-        </Link>
+      <Link to="/" className='menu-link'>
+          <i className="fas fa-sign-out-alt"></i> Logout
+      </Link>
       </div>
     </div>
   );

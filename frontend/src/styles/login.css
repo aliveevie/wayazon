@@ -57,7 +57,8 @@
 
   @media screen and (max-width:800px) {
       .logo{
-        margin-left: 50px;
+        position: relative;
+        left: 25px;
       }
   }
   

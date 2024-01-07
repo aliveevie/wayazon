@@ -4,12 +4,12 @@
     display: block;
     justify-content: center;
     align-items: center;
-    background-color: darkblue;
+    background-color: white;
     margin: 0 auto;
   }
   
   .products {
-    background-color: darkblue;
+    background-color: white;
     color: white;
     padding: 20px;
     text-align: center;
