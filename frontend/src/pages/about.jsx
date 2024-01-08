@@ -25,7 +25,7 @@ export function About({mobile, handleMobile}){
         {mobile && <MobileHeader  mobile={mobile} handleMobile={handleMobile} />}
       
        <div className="about-us"  >
-            <h2 data-aos="zoom-in" >Wayazone Gadget</h2>
+            <h2 data-aos="zoom-in" >Wayazon Gadgets</h2>
             <p data-aos="zoom-out" >With its headquarters located in Jigawa State, Wayazon Gadgets is a trailblazing e-commerce firm that specializes in the easy purchase and sale of phones and accessories. Our endeavor, which is centered on giving tech aficionados a convenient platform, seeks to revolutionize the local market by presenting a wide selection of high-quality products.
 
     Dependability and efficiency are given top priority by Wayazon Gadgets, which is dedicated to meeting customer needs. For both buyers and sellers, our platform guarantees a quick, easy, and transparent transaction procedure while facilitating safe transactions. Our goal is to use technology to develop a dynamic online marketplace that meets changing consumer demands.
