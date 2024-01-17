@@ -1,6 +1,5 @@
 import Slider from "../components/slider";
 import SliderData from "../data/sliderImages";
-import { AdvertOne } from "../components/advert1";
 import { LondonUsed } from "../data/londonUsed";
 import { Header } from "../components/header";
 import { MobileHeader } from "../components/mobileHeader";
@@ -16,8 +15,7 @@ export function Home({mobile, handleMobile}){
 
             <SmartWatch />
             <LondonUsed />
-            <Slider  slides={SliderData} />
-            <AdvertOne />
+           
             <Footer />
         </>
     )

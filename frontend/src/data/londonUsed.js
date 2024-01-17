@@ -1,5 +1,4 @@
 // LondonUsed.jsx
-
 import { Loader } from "../components/loader";
 import { useState, useEffect } from "react";
 import { ShowDetails } from "../components/showDetails";
@@ -48,7 +47,7 @@ export function LondonUsed() {
             <div className="phone-images">
               {productsInSubcategory.map((phone, index) => (
                 <div key={index} className="product-card">
-                  <img src={phone.image_link} alt={phone.product_name} />
+                  <img src={phone.image_link} alt={phone.product_name} width={50} height={50} />
                   <div className="product-info">
                     <h3>{phone.product_name}</h3>
                     <button onClick={() => handleCurrentData(phone)}>View Details</button>
